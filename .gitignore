@@ -1,4 +1,10 @@
+### Idea packages
 .idea/
+*.iml
+
+### Maven packages
 target
-core/*.iml
-web-control/*.iml
+
+### Config files
+config/application-dev.yml
+config/application-local.yml
