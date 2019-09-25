@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  service:
+    image: app/sport_predictions:0.0.1-SNAPSHOT
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./config:/usr/src/app/config
+  db:
+    image: postgres:12-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - database_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: sport_predictions
+      POSTGRES_DB: sport_predictions
+      POSTGRES_USER: sport_predictions
+      PGDATA: /var/lib/postgresql/data/pg_data
+volumes:
+  database_data:
